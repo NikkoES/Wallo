@@ -9,13 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.ShopActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.legalitas.LegalitasActivity" />
+        <activity android:name=".activity.profil.ProfilTokoActivity" />
+        <activity android:name=".activity.profil.KurirTokoActivity" />
+        <activity android:name=".activity.profil.ImageTokoActivity" />
+        <activity android:name=".activity.toko.AturTokoActivity" />
+        <activity android:name=".activity.toko.MenuActivity" />
+        <activity android:name=".activity.toko.produk.ListProdukActivity" />
+        <activity android:name=".activity.toko.produk.ProdukActivity" />
+        <activity android:name=".activity.toko.produk.VariantActivity" />
+        <activity android:name=".activity.toko.produk.GroceryActivity"></activity>
     </application>
 
 </manifest>
