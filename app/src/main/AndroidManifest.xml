@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.co.travels.wallo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +16,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.ShopActivity" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/maps_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity android:name=".activity.SettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ShopActivity" />
         <activity android:name=".activity.legalitas.LegalitasActivity" />
         <activity android:name=".activity.profil.ProfilTokoActivity" />
         <activity android:name=".activity.profil.KurirTokoActivity" />
@@ -26,7 +39,7 @@
         <activity android:name=".activity.toko.produk.ListProdukActivity" />
         <activity android:name=".activity.toko.produk.ProdukActivity" />
         <activity android:name=".activity.toko.produk.VariantActivity" />
-        <activity android:name=".activity.toko.produk.GroceryActivity"></activity>
+        <activity android:name=".activity.toko.produk.GroceryActivity" />
     </application>
 
 </manifest>

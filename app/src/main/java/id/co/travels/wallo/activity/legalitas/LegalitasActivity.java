@@ -13,10 +13,12 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -52,7 +54,7 @@ public class LegalitasActivity extends AppCompatActivity {
     @BindView(R.id.et_tipe_identitas)
     EditText etTipeIdentitas;
     @BindView(R.id.txt_keterangan)
-    EditText txtKeterangan;
+    TextView txtKeterangan;
     @BindView(R.id.btn_ambil_foto)
     Button buttonAmbilFoto;
 
@@ -61,6 +63,15 @@ public class LegalitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legalitas);
         ButterKnife.bind(this);
+
+        initInitalView();
+        initToolbar();
+    }
+
+    private void initInitalView() {
+        buttonAmbilFoto.setText("Ambil Foto KTP");
+        etTipeIdentitas.setText("Kartu Tanda Penduduk (KTP)");
+        txtKeterangan.setText("ini keterangan KTP");
     }
 
     @OnClick({R.id.btn_ambil_foto, R.id.et_tipe_identitas})
@@ -114,7 +125,7 @@ public class LegalitasActivity extends AppCompatActivity {
     private void selectImage() {
         StrictMode.VmPolicy.Builder builderCamera = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builderCamera.build());
-        final CharSequence[] items = {"Ambil Foto", "Pilih dari Galeri", "Batal"};
+        final CharSequence[] items = {"Ambil Foto", "Pilih dari Galeri"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Ambil Foto");
@@ -131,8 +142,6 @@ public class LegalitasActivity extends AppCompatActivity {
                     intent.setType("image/*");
                     intent.setAction(Intent.ACTION_GET_CONTENT);
                     startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_FILE);
-                } else if (items[item].equals("Batal")) {
-                    dialog.dismiss();
                 }
             }
         });
@@ -200,5 +209,18 @@ public class LegalitasActivity extends AppCompatActivity {
         mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_Wallo_" + timeStamp + ".jpg");
 
         return mediaFile;
+    }
+
+    private void initToolbar() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Identitas Resmi");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

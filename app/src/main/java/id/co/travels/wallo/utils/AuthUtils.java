@@ -1,0 +1,7 @@
+package id.co.travels.wallo.utils;
+
+public class AuthUtils {
+
+    public static final String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY2MTI0OCIsInBob25lX251bWJlciI6IjYyODk2MDE4MTM2NTEiLCJuYW1lX3VzZXIiOiJKaG9uZSBDb25ub3IiLCJlbWFpbF91c2VyIjoiamhvbmVAZ21haWwuY29tIiwiaW1laSI6IjVkM2JmMzlkLTJkMmQtNDZhNy05MTBmLTk2MWViMmNmNmFhZiIsInRpbWUiOjE1NDE4NjI3MDR9.ehuICHD7LFTwSX69hfgGZsAY0fDaqOGHPKl5v9MdabA";
+
+}

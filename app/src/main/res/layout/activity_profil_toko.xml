@@ -68,11 +68,41 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/et_jam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="Jam Buka"
+                        android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <EditText
                         android:id="@+id/et_jam_buka"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
                         android:hint="Jam Buka"
+                        android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_jam_tutup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="Jam Tutup"
                         android:inputType="text" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -88,6 +118,20 @@
                         android:focusable="false"
                         android:hint="Alamat Toko"
                         android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_nomor_toko"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="Nomor Telepon Toko"
+                        android:inputType="phone" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -129,6 +173,8 @@
             android:id="@+id/cb_jarak_tawaran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
             android:text="Jika jarak 1-5km saya menawarkan, antar via saya sendiri (as penjual)"
             android:textSize="14sp" />
@@ -136,6 +182,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:orientation="horizontal">
 
             <EditText
@@ -150,9 +198,9 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="/KM"
-                android:layout_gravity="center"
                 android:textColor="@color/textColorBlack"
                 android:textSize="14sp" />
 
@@ -164,9 +212,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
+            android:text="simpan"
             android:textColor="@color/textColorWhite"
-            android:textStyle="bold"
-            android:text="simpan" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

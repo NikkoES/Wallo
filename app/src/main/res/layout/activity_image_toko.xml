@@ -24,7 +24,6 @@
         android:textColor="@color/textColorWhite"
         android:textStyle="bold" />
 
-
     <Button
         android:id="@+id/btn_simpan"
         android:layout_width="match_parent"
